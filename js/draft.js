@@ -473,17 +473,18 @@ $(document).ready(function(){
         for(i=1; i<=teams_info.length; i++){
             json['teams'][i-1] = teams_info[i];
         }
-        var response = $.post('post.php', json, function(){
+        var response = $.post('php/post.php', json, function(){
             $('#export_span').append('<a id="download_export_draft" href="'+response.responseText+'" download>Click here to download</a>');    
             });
         disable_export_draft();
+        
         }
     function import_draft(file){
-        var url = 'import.php';
+        var url = 'php/import.php';
         var xhr = new XMLHttpRequest();
         var fd = new FormData();
         
-        xhr.open("POST", "import.php", true);
+        xhr.open("POST", "php/import.php", true);
         fd.append("userfile", file);
         xhr.send(fd);    
         xhr.onreadystatechange = function(){
