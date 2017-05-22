@@ -351,7 +351,7 @@ $(document).ready(function(){
     function populate_player_list_via_json_queries(callback){
         var players_array = [];        
         var url = "http://api.fantasy.nfl.com/v1/players/editordraftranks?format=json&count=50&offset=";
-        $('#player_list').html('<table id="player_list_table"><thead class="w3-light-blue"><tr><th>no.</th><th>Pos</th><th>Player</th><th>Team</th><th>ADP</th></thead></tr><tbody id=player_rows_tbody>');
+        $('#player_list').html('<table id="player_list_table"><thead ><tr><th>no.</th><th>Pos</th><th>Player</th><th>Team</th><th>ADP</th></thead></tr><tbody id=player_rows_tbody>');
 
         var players_needed = 300;
         var players_retrieved = 0;
@@ -443,14 +443,9 @@ $(document).ready(function(){
     function highlight_picking_teams_table(){
         if(round%2!=0){ team = pick;}
         if(round%2==0) {team = (numTeams+1)-pick;}
-        $('.team_board th').css('background-color', 'transparent');
+        //$('.team_board th').css('background-color', 'transparent');
         $('#team_'+team+'_board th').css('background-color', '#E37222');
         $('#team_'+team+'_board th').css('border-radius', '.5em');
-        //Trying to get the header of team on the clock to flash
-        //for(i=5; i >= 1; i--){
-        //    $('#team_'+team+'_board th').fadeOut(500).fadeIn(500);
-        //} 
-        //$('#team_'+team+'_board th').fadeToggle("slow", "linear");
         }
       
     function enable_export_draft(){
