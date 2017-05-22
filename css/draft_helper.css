@@ -2,8 +2,7 @@ html, body {
     font-family: Ubuntu;
 }
 body{
-    overflow: hidden;
-    position: fixed;
+    width:100%;
 }
 hr{
     height: 1px;
@@ -14,8 +13,9 @@ hr{
 }
 
 #menu{
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: minmax(100px, 33%) minmax(100px, 33%) minmax(100px, 33%);
+    /*justify-content: center;*/
     overflow: hidden;
     min-height: 15vh;
 
@@ -36,14 +36,6 @@ hr{
     overflow:auto;
     height: 92vh;
 }
-
-@media only screen and (max-height: 750px){
-    #menu{height: 20vh;}
-    #player_list{height: 70vh;}
-    #teams_display{height: 80vh;}
-    #draft_record{height: 80vh;}
-}
-
 
 tr[drafted=false]:hover{
     cursor: pointer;
